@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../services/product/product.service';
 import { HighlightDirective } from '../../directives/highlight/highlight.directive';
+import { ProfilePhotoComponent } from '../../components/profile-photo/profile-photo.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [ProfilePhotoComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   /**

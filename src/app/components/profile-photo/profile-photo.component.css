@@ -1,0 +1,5 @@
+/* By default, a component's styles only affect elements defined in that component's template */
+
+img {
+    border-radius: 50%;
+}
