@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { ProductService } from '../../services/product/product.service';
 import { HighlightDirective } from '../../directives/highlight/highlight.directive';
 import { ProfilePhotoComponent } from '../../components/profile-photo/profile-photo.component';
+import { ProductsComponent } from '../products/products.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProfilePhotoComponent],
+  imports: [ProfilePhotoComponent, ProductsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   /**

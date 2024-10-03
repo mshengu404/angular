@@ -5,6 +5,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { loginGuard } from './guard/login/login.guard';
 import { CartComponent } from './pages/cart/cart.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 /* [Routing helps you change what the user sees in a single page application.]
 
@@ -52,7 +53,7 @@ export const routes: Routes = [
     {
         path: "product/:id",
         title: "Product",
-        component: ProductComponent
+        component: ProductDetailsComponent
     },
     {
         path: "cart",

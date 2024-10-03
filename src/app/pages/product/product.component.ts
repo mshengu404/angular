@@ -2,6 +2,7 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { IProduct } from '../../interface/product.interface';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -14,8 +15,21 @@ export class ProductComponent {
   @Input({ required: true }) product!: IProduct;
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private readonly _cartService: CartService
   ) { }
+
+  onAddProduct(product: IProduct, quantity: number) {
+    this._cartService.addProduct(product, quantity);
+  }
+
+  onRemoveProduct(productId: string) {
+    this._cartService.removeProduct(productId);
+  }
+
+  onUpdateQuantity(productId: string, quantity: number) {
+    this._cartService.updateProductQuantity(productId, quantity);
+  }
 
   ngOnInit() {
     console.log(
@@ -73,5 +87,4 @@ export class ProductComponent {
     )
   }
 
-  
 }
